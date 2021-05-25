@@ -1,13 +1,13 @@
 import { observer } from 'mobx-react-lite';
 import React, { useContext } from 'react';
-import MovieStore from '../../stores/MovieStore';
+import RootStore from '../../stores/RootStore';
 import MovieItem from './MovieItem';
 
 const MovieList = () => {
-  const { movies } = useContext(MovieStore);
+  const { movieStore } = useContext(RootStore);
   return (
     <div className='movie-list'>
-      {movies.map((movie) => (
+      {movieStore.movies.map((movie) => (
         <MovieItem key={movie.id} movie={movie} />
       ))}
     </div>

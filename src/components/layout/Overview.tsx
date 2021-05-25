@@ -1,14 +1,14 @@
 import { observer } from 'mobx-react-lite';
 import React, { useContext } from 'react';
-import MovieStore from '../../stores/MovieStore';
+import rootStore from '../../stores/RootStore';
 import MovieList from '../movieList/MovieList';
 
 const Overview = () => {
 
-    const { movies, loadByParams } = useContext(MovieStore);
+    const { movieStore } = useContext(rootStore);
 
     const handleFilter = async (filter: string) => {
-        await loadByParams({ "q": filter })
+        await movieStore.loadByParams({ "q": filter })
     }
 
     return (
@@ -24,7 +24,7 @@ const Overview = () => {
             </ul>
             <hr />
 
-            {movies.length > 0 ? <MovieList /> : <p>No movies to show...</p>}
+            {movieStore.movies.length > 0 ? <MovieList /> : <p>No movies to show...</p>}
         </div>
     )
 }

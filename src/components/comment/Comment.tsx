@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Comment as CommentModel } from '../../models/Comment';
 import { CommentFeedback as CommentFeedbackType } from '../../models/types/CommentTypes';
+import RootStore from '../../stores/RootStore';
 
 interface IProps {
   comment: CommentModel;
@@ -23,14 +24,43 @@ interface IFeedbackProps {
   feedback: CommentFeedbackType;
 }
 const CommentFeedback: React.FC<IFeedbackProps> = ({ feedback }) => {
+  const { uiStore } = useContext(RootStore);
+
   const render = () => {
     switch (feedback) {
       case 'positive':
-        return <i className='far fa-smile' style={{ marginLeft: '7px', fontSize: '1.3rem'}}></i>;
+        return (
+          <i
+            className={uiStore.feedbackIcons.smile.icon}
+            style={{
+              marginLeft: '7px',
+              fontSize: '1.3rem',
+              color: uiStore.feedbackIcons.smile.color,
+            }}
+          ></i>
+        );
       case 'negative':
-        return <i className='far fa-frown' style={{ marginLeft: '7px', fontSize: '1.3rem'}}></i>;
+        return (
+          <i
+            className={uiStore.feedbackIcons.sad.icon}
+            style={{
+              marginLeft: '7px',
+              fontSize: '1.3rem',
+              color: uiStore.feedbackIcons.sad.color,
+            }}
+          ></i>
+        );
       case 'neutral':
-        return <i className='far fa-meh-blank' style={{ marginLeft: '7px', fontSize: '1.3rem'}}></i>;
+        return (
+          <i
+            className={uiStore.feedbackIcons.neutral.icon}
+            style={{
+              marginLeft: '7px',
+              fontSize: '1.3rem',
+              color: uiStore.feedbackIcons.neutral.color,
+            }}
+          ></i>
+        );
       default:
         return null;
     }

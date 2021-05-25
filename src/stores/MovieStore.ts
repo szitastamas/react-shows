@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { action, makeAutoObservable, observable, runInAction } from 'mobx';
-import { createContext } from 'react';
 import { Movie } from '../models/Movie';
+import { RootStore } from './RootStore';
 
 class MovieStore {
-  constructor() {
+  rootStore: RootStore;
+  constructor(rootStore: RootStore) {
+    this.rootStore = rootStore;
     makeAutoObservable(this, {}, { autoBind: true });
   }
 
@@ -81,4 +83,4 @@ class MovieStore {
   }
 }
 
-export default createContext(new MovieStore());
+export default MovieStore;
