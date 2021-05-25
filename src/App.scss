@@ -1,3 +1,7 @@
+@import "./styles/mixins";
+@import "./styles/common/button";
+@import "./styles/movie/movie-list-items";
+
 .App {
   text-align: center;
 }

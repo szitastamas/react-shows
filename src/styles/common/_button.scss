@@ -1,0 +1,7 @@
+.Button {
+    background: red;
+
+    &[data-type="success"]{
+        background: green;
+    }
+}

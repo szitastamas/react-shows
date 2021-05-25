@@ -1,0 +1,1 @@
+export type CommentFeedback = 'positive' | 'negative' | 'neutral'

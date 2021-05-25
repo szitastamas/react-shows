@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch, withRouter } from 'react-router';
+import './App.scss';
+import Details from './components/layout/Details';
+import Home from './components/layout/Home';
+import Navbar from './components/layout/Navbar';
+import Overview from './components/layout/Overview';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Navbar />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/movie-list' component={Overview} />
+        <Route path='/details/:id' component={Details} />
+      </Switch>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);

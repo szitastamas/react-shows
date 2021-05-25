@@ -1,0 +1,37 @@
+.movie-list {
+    max-width: 60%;
+    margin: auto;
+
+    &-item {
+        display: flex;
+        margin: 1rem 0;
+        text-align: left;
+        width: 100%;
+        background: whitesmoke;
+        padding: 1rem;
+
+        .movie-text{
+            padding: 0 1rem;
+            width: 100%;
+
+            .title-row{
+                display: flex;
+                justify-content: space-between;
+
+                .details-link {
+                    text-decoration: none;
+                    color: teal;
+                    background: #222;
+                    font-weight: 600;
+                    border-radius: 10px;
+                    padding: .4rem 1rem;
+                    @include flex-center;
+                }
+
+                .movie-text-title {
+                    margin: 0 0 1rem 0;
+                }
+            }
+        }
+    }
+}
