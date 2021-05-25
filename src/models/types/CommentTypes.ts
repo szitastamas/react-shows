@@ -1,1 +1,6 @@
-export type CommentFeedback = 'positive' | 'negative' | 'neutral'
+export enum CommentFeedback {
+    positive = 'positive',
+    negative = 'negative',
+    neutral = 'neutral'
+
+}

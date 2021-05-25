@@ -1,5 +1,6 @@
-import { computed, makeObservable, observable } from "mobx";
+import { action, computed, makeObservable, observable } from "mobx";
 import { Comment } from "./Comment";
+import { CommentFeedback } from "./types/CommentTypes";
 import { IMovieInitialization, MovieStatusTypes } from "./types/MovieTypes";
 
 export class Movie {
@@ -32,11 +33,16 @@ export class Movie {
 
         makeObservable(this, {
             comments: observable,
-            positiveComments: computed
+            positiveComments: computed,
+            addComment: action
         })
     }
 
     get positiveComments(): Comment[] {
-        return this.comments.filter(comment => comment.feedback === 'positive');
+        return this.comments.filter(comment => comment.feedback === CommentFeedback.positive);
+    }
+
+    addComment(comment: Comment) {
+        this.comments.unshift(comment);
     }
 }

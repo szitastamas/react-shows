@@ -1,6 +1,12 @@
 @import "./styles/mixins";
 @import "./styles/common/button";
 @import "./styles/movie/movie-list-items";
+@import "./styles/movie/card";
+
+li, a {
+  text-decoration: none;
+  list-style: none;
+}
 
 .App {
   text-align: center;

@@ -15,8 +15,7 @@
             width: 100%;
 
             .title-row{
-                display: flex;
-                justify-content: space-between;
+                @include flex-space-between;
 
                 .details-link {
                     text-decoration: none;

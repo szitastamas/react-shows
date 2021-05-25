@@ -1,0 +1,113 @@
+.movie-card {
+    display: flex;
+    padding: 2rem 3rem;
+    margin: 0 2rem;
+    border: 2px solid #222;
+
+    &-body {
+        padding: 0 1rem;
+        text-align: left;
+
+        .movie-card-body-details {
+            
+            .movie-genre-list{
+                display: flex;
+                justify-content: flex-end;
+
+                &-item{
+                    color: teal;
+                    font-weight: 600;
+                    margin-right: 7px;
+                }
+            }
+        }
+
+        .movie-card-body-comments {
+            .comments-header-row {
+                display: flex;
+                justify-content: space-between;
+
+                &-title {
+                    margin: 0 0 1rem 0;
+                }
+
+                button {
+                    background: none;
+                    font-size: 1.1rem;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+
+                    &[data-open="true"] {
+                        color: goldenrod;
+                    }
+                }
+            }
+
+            .add-comment-field {
+                width: 100%;
+            
+                .title-row{
+                    @include flex-space-between;
+                    
+                    .btn-group {
+                        .feedback-button{
+                            font-size: 1.7rem;
+                            background: none;
+                            border: none;
+                            transition: 120ms color ease-out;
+                            cursor: pointer;
+
+                            &[data-active="true"],
+                            &:hover {
+                                &[data-type="positive"] {
+                                    color: forestgreen;
+                                }
+
+                                &[data-type="negative"] {
+                                    color: lightcoral;
+                                }
+
+                                &[data-type="neutral"] {
+                                    color: skyblue;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .save-comment-btn {
+                    width: 100%;
+                    padding: .7rem 1rem;
+                    background: skyblue;
+                    text-align: center;
+                    border: none;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    transition: 120ms background ease-out;
+
+                    &:hover {
+                        background: lighten(skyblue, 5);
+                    }
+                }
+            }
+
+            .comment-container{
+                max-width: 100%;
+                max-height: 400px;
+                word-break: break-all;
+                overflow: auto;
+                padding: 1rem 0;
+
+                .title-row{
+                    display: flex;
+
+                    .title {
+                        margin: 0;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
