@@ -11,7 +11,7 @@ export class UIStore {
 
     @observable
     categoryFilterKeyHistory: string[] = []
-    HISTORY_KEY_LIMIT = 8;
+    HISTORY_KEY_LIMIT = 12;
 
     feedbackIcons = {
         smile: {

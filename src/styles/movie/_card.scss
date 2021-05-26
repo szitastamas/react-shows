@@ -79,7 +79,7 @@
                 .save-comment-btn {
                     width: 100%;
                     padding: .7rem 1rem;
-                    background: skyblue;
+                    background: goldenrod;
                     text-align: center;
                     border: none;
                     font-size: 1rem;
@@ -87,7 +87,7 @@
                     transition: 120ms background ease-out;
 
                     &:hover {
-                        background: lighten(skyblue, 5);
+                        background: lighten(goldenrod, 5);
                     }
                 }
             }

@@ -9,7 +9,7 @@ const Overview = () => {
     const { movieStore } = useContext(rootStore);
 
     return (
-        <div>
+        <div id="overview">
             <h3>Check out your favourite shows!</h3>
             <p>Choose a filtering option:</p>
             <CategoryFilter />
