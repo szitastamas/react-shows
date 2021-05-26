@@ -14,6 +14,7 @@ const Summary: React.FC<IProps> = ({ summary }) => {
           : summary;
     }
   }, [descriptionRef]);
+  
   return <div className='movie-description' ref={descriptionRef}></div>;
 };
 
