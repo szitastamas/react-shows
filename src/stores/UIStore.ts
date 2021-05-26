@@ -1,4 +1,4 @@
-import { makeAutoObservable, observable } from "mobx";
+import { action, makeAutoObservable, observable } from "mobx";
 import { RootStore } from "./RootStore";
 
 export class UIStore {
@@ -10,6 +10,9 @@ export class UIStore {
     }
 
     @observable
+    categoryFilterKeyHistory: string[] = []
+    HISTORY_KEY_LIMIT = 8;
+
     feedbackIcons = {
         smile: {
             icon: 'far fa-smile',
@@ -23,5 +26,26 @@ export class UIStore {
             icon: 'far fa-meh-blank',
             color: 'lightblue'
         }
+    }
+
+    generalIcons = {
+        search: 'fas fa-search'
+    }
+
+    @action
+    addSearchKeyToHistory(key: string) {
+        if(this.categoryFilterKeyHistory.includes(key)){
+            const index = this.categoryFilterKeyHistory.findIndex(elem => elem === key);
+            const elem = this.categoryFilterKeyHistory.splice(index, 1)[0];
+
+            this.categoryFilterKeyHistory.unshift(elem);
+            return;
+        } 
+        
+        if(this.categoryFilterKeyHistory.length === this.HISTORY_KEY_LIMIT) {
+            this.categoryFilterKeyHistory.pop();
+        }
+        
+        this.categoryFilterKeyHistory.unshift(key);
     }
 }

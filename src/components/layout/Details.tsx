@@ -13,7 +13,6 @@ const Details = () => {
 
   useEffect(() => {
     const movie = movieStore.getMovieById(id);
-    console.log({ ...movie });
     setMovie(movie);
   }, []);
 

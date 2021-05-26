@@ -8,7 +8,7 @@ interface IProps {
   movie: Movie;
 }
 const Card: React.FC<IProps> = ({ movie }) => {
-  const [addCommentState, setAddCommentState] = useState(true);
+  const [addCommentState, setAddCommentState] = useState(false);
 
   return (
     <div className='movie-card'>
