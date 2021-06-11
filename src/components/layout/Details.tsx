@@ -12,9 +12,10 @@ const Details = () => {
   const [movie, setMovie] = useState<Movie | undefined>();
 
   useEffect(() => {
-    const movie = movieStore.getMovieById(id);
-    setMovie(movie);
-  }, []);
+    const m = movieStore.getMovieById(id);
+    setMovie(m);
+    console.log(id);
+  }, [id, movie]);
 
   return (
     <div className='movie-details'>

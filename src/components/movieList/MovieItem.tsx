@@ -11,7 +11,7 @@ const MovieItem: React.FC<IProps> = ({ movie }) => {
     <div className='movie-list-item'>
       <div className='movie-img'>
         {movie.image ? (
-          <img src={movie.image.medium} width={100} />
+          <img src={movie.image.medium} alt="movie_poster" width={100} />
         ) : (
           <div className='img-placeholder'></div>
         )}
