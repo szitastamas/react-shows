@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { action, makeAutoObservable, observable, runInAction } from 'mobx';
+import { action, makeObservable, observable, runInAction } from 'mobx';
 import { Movie } from '../models/Movie';
 import { RootStore } from './RootStore';
 
@@ -7,7 +7,7 @@ class MovieStore {
   rootStore: RootStore;
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
-    makeAutoObservable(this, {}, { autoBind: true });
+    makeObservable(this, {}, { autoBind: true });
   }
 
   @observable

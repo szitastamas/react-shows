@@ -14,6 +14,7 @@ const Comment: React.FC<IProps> = ({ comment }) => {
         <CommentFeedback feedback={comment.feedback} />
       </div>
       <p>{comment.content}</p>
+      <hr />
     </div>
   );
 };
