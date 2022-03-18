@@ -14,7 +14,7 @@ const Details = () => {
   useEffect(() => {
     const movie = movieStore.getMovieById(id);
     setMovie(movie);
-  }, []);
+  }, [id, movie]);
 
   return (
     <div className='movie-details'>
